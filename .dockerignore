@@ -1,0 +1,8 @@
+*.md
+*.yml
+Dockerfile
+.idea
+.git
+.github
+.gitignore
+*.iml
