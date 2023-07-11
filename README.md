@@ -22,6 +22,10 @@ $ mvn clean install
 ```shell
 $ mvn clean install -Dcucumber.filter.tags="@REPLACE_WITH_YOUR_TAGS"
 ```
+* If mvn clean install does not work in you local then simply run this
+```shell
+$ TestRunner.java or src/test/resources/suites
+```
 * Run the tests with docker
 ```shell
 $ docker build .
