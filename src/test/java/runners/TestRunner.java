@@ -6,16 +6,17 @@ import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.DataProvider;
 
-
 @CucumberOptions(
         features = "src/test/resources/features/ValidateNewsTests.feature",
-        glue = "NewsValidationStepDefinitions.java",
+        glue = "stepdefinations",
         plugin = {
                 "pretty",
                 "html:target/cucumber-reports/cucumber-pretty",
                 "json:target/cucumber-reports/CucumberTestReport.json",
                 "timeline:target/test-output-thread/"
-        }
+        },
+        monochrome = true,
+        publish = true
 )
 public class TestRunner extends AbstractTestNGCucumberTests {
 
