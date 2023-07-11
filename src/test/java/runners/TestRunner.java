@@ -8,8 +8,8 @@ import org.testng.annotations.DataProvider;
 
 
 @CucumberOptions(
-        features = "src/test/java/resources/features/ValidateNewsTests.feature",
-        glue = "stepdefinitions",
+        features = "src/test/resources/features/ValidateNewsTests.feature",
+        glue = "NewsValidationStepDefinitions.java",
         plugin = {
                 "pretty",
                 "html:target/cucumber-reports/cucumber-pretty",

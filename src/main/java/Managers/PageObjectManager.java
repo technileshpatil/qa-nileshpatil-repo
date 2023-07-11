@@ -17,7 +17,6 @@ public class PageObjectManager {
     public GuardianNewsPage getHomePage() {
         return (guardianNewsPage == null) ? guardianNewsPage = new GuardianNewsPage(webDriver) : guardianNewsPage;
     }
-
     public NewsValidationPage getSearchEngineNewsListPage() {
         return (newsValidationPage == null) ? newsValidationPage = new NewsValidationPage(webDriver) : newsValidationPage;
     }

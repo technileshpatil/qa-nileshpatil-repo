@@ -34,3 +34,4 @@ $ docker build .
 ```properties
 cucumber.publish.enabled=true
 ```
+Example for of failed report https://reports.cucumber.io/reports/8ddeafa6-2943-473f-8f33-45d679f5662a

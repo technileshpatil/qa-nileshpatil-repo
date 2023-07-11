@@ -12,7 +12,7 @@ import java.util.function.Function;
 
 public class Wait {
 
-    private static void until(WebDriver webDriver, Duration timeOutInSeconds, Function<WebDriver, Boolean> waitCondition) {
+    private static void until(WebDriver webDriver, Long timeOutInSeconds, Function<WebDriver, Boolean> waitCondition) {
         WebDriverWait webDriverWait = new WebDriverWait(webDriver, timeOutInSeconds);
         try {
             webDriverWait.until(waitCondition);
@@ -21,7 +21,7 @@ public class Wait {
         }
     }
 
-    public static void untilAjaxCallIsDone(WebDriver webDriver, Duration timeOutInSeconds) {
+    public static void untilAjaxCallIsDone(WebDriver webDriver, Long timeOutInSeconds) {
         until(webDriver, timeOutInSeconds, (function) -> {
             Boolean isJqueryCallDone = (Boolean) ((JavascriptExecutor) webDriver).executeScript("return jQuery.active==0");
             if (!isJqueryCallDone) System.out.println("jQuery call is in progress");
@@ -29,7 +29,7 @@ public class Wait {
         });
     }
 
-    public static void untilPageReadyState(WebDriver webDriver, Duration timeOutInSeconds) {
+    public static void untilPageReadyState(WebDriver webDriver, Long timeOutInSeconds) {
         until(webDriver, timeOutInSeconds, (function) -> {
             String isPageLoaded = String.valueOf(((JavascriptExecutor) webDriver).executeScript("return document.readyState"));
             if (isPageLoaded.equals("complete")) {
@@ -41,11 +41,11 @@ public class Wait {
         });
     }
 
-    public static void untilElementIsVisible(WebDriver webDriver, WebElement webElement, Duration timeOutInSeconds) {
+    public static void untilElementIsVisible(WebDriver webDriver, WebElement webElement, Long timeOutInSeconds) {
         new WebDriverWait(webDriver, timeOutInSeconds).until(ExpectedConditions.visibilityOf(webElement));
     }
 
-    public static void untilListElementIsVisible(WebDriver webDriver, List<WebElement> webElements, Duration timeOutInSeconds) {
+    public static void untilListElementIsVisible(WebDriver webDriver, List<WebElement> webElements, Long timeOutInSeconds) {
         new WebDriverWait(webDriver, timeOutInSeconds).until(ExpectedConditions.visibilityOfAllElements(webElements));
     }
 }
